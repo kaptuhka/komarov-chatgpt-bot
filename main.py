@@ -10,11 +10,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Получаем токены из переменных окружения
-openai.api_key = os.getenv("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")
-TELEGRAM_BOT_TOKEN = os.getenv("7934864167:AAFSZ4D1ViSaRI68RNMCqK6HMmxHR1BKyQg")
+openai.api_key = os.getenv("OPENAI_API_KEY")
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 
 # Инициализация бота и диспетчера
-bot = Bot(token=TELEGRAM_BOT_TOKEN)
+bot = Bot(token=os.getenv("TELEGRAM_BOT_TOKEN"))
 dp = Dispatcher(storage=MemoryStorage())
 
 # Словарь для хранения контекста по каждому пользователю
