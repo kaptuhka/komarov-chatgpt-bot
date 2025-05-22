@@ -1,14 +1,14 @@
 import os
 import openai
 from aiogram import Bot, Dispatcher, types
-from aiogram.contrib.fsm_storage.memory import MemoryStorage
+from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.utils import executor
 from dotenv import load_dotenv
 
 load_dotenv()
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
-bot = Bot(token=os.getenv("TELEGRAM_BOT_TOKEN"))
+openai.api_key = os.getenv("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")
+bot = Bot(token=os.getenv("7934864167:AAFSZ4D1ViSaRI68RNMCqK6HMmxHR1BKyQg"))
 storage = MemoryStorage()
 dp = Dispatcher(bot, storage=storage)
 
