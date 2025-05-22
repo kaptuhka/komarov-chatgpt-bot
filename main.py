@@ -14,7 +14,7 @@ openai.api_key = os.getenv("sk-proj-RbeVZe-aWaOUAjaKl_DgKfK5kNd1GR0vDUsBRx-EVQPI
 TELEGRAM_TOKEN = os.getenv("7934864167:AAFSZ4D1ViSaRI68RNMCqK6HMmxHR1BKyQg")
 
 # Инициализация бота и диспетчера
-bot = Bot(token=TELEGRAM_TOKEN)
+bot = Bot(token=7934864167:AAFSZ4D1ViSaRI68RNMCqK6HMmxHR1BKyQg)
 dp = Dispatcher(storage=MemoryStorage())
 
 # Словарь для хранения контекста по каждому пользователю
