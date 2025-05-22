@@ -11,7 +11,7 @@ load_dotenv()
 
 # Получаем токены из переменных окружения
 openai.api_key = os.getenv("OPENAI_API_KEY")
-TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 
 # Инициализация бота и диспетчера
 bot = Bot(token=os.getenv("TELEGRAM_BOT_TOKEN"))
