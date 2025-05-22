@@ -41,8 +41,6 @@ response = client.chat.completions.create(
     messages=user_context[user_id]
 )
 reply = response.choices[0].message.content
-
-        )
         reply = response['choices'][0]['message']['content']
         user_context[user_id].append({"role": "assistant", "content": reply})
         await message.answer(reply)
