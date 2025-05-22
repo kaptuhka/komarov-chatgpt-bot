@@ -50,7 +50,7 @@ async def handle_message(message: Message):
         await message.answer(f"Ошибка при обращении к OpenAI: {e}")
 
 async def main():
-    await dp.start_webhook(bot)
+    await dp.start_polling(bot)
 
 if __name__ == "__main__":
     asyncio.run(main())
