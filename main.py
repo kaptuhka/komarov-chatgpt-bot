@@ -31,9 +31,16 @@ async def chat(message: Message):
     user_context[user_id].append({"role": "user", "content": message.text})
 
     try:
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
-            messages=user_context[user_id]
+       from openai import OpenAI
+
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+response = client.chat.completions.create(
+    model="gpt-3.5-turbo",
+    messages=user_context[user_id]
+)
+reply = response.choices[0].message.content
+
         )
         reply = response['choices'][0]['message']['content']
         user_context[user_id].append({"role": "assistant", "content": reply})
