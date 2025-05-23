@@ -10,15 +10,15 @@ from dotenv import load_dotenv
 load_dotenv()
 
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+API_URL = "https://openai.1rmb.tk/v1/chat/completions"
+
 bot = Bot(token=TELEGRAM_TOKEN)
 dp = Dispatcher(storage=MemoryStorage())
 user_context = {}
 
-API_URL = "https://free.churchless.tech/v1/chat/completions"
-
 @dp.message(Command("start"))
 async def cmd_start(message: Message):
-    await message.answer("Привет! Я бесплатный AI-бот. Напиши вопрос.")
+    await message.answer("Привет! Я бесплатный AI-бот. Напиши любой вопрос.")
 
 @dp.message()
 async def handle_message(message: Message):
@@ -30,7 +30,7 @@ async def handle_message(message: Message):
         try:
             async with session.post(API_URL, json={
                 "model": "gpt-3.5-turbo",
-                "messages": user_context[user_id],
+                "messages": user_context[user_id]
             }) as resp:
                 data = await resp.json()
                 reply = data['choices'][0]['message']['content']
